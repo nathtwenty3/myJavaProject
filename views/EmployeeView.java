@@ -124,6 +124,7 @@ public class EmployeeView {
             print("Employee id"+employeeId+"not found");
         }
     }
+
     private void addEmployee(){
         print("3. Add employee \n");
         print("Enter first name :");
@@ -166,13 +167,14 @@ public class EmployeeView {
             print("Enter gender :");
             String employeeGender = input();
             print("Enter phone number :");
-            int employeePhoneNumber = scanner.nextInt();
+            int employeePhoneNumber = Integer.parseInt(input());
             print("Enter employee salary :");
-            double employeeSalary = scanner.nextDouble();
+            double employeeSalary = Double.parseDouble(input());
             print("Enter isMarried (y/n) :");
             boolean employeeIsMarried = inputBoolean();
-
             Employee employee = new Employee();
+
+            employee.setId(employeeId);
             employee.setFirstName(employeeFirstName);
             employee.setLastName(employeeLastName);
             employee.setGender(employeeGender);
@@ -183,7 +185,7 @@ public class EmployeeView {
             employeeControlller.updateEmployee(employee);
 
             print("------------------------------\n");
-            print("Employee Id :"+employee.getId()+"\n");
+            print("Employee id :"+employee.getId()+"\n");
             print("Employee firstName :"+employee.getFirstName()+"\n");
             print("Employee lastName :"+employee.getLastName()+"\n");
             print("Employee gender :"+employee.getGender()+"\n");
